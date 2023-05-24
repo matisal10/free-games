@@ -1,1 +1,29 @@
-<p>dashboard works!</p>
+<div class="container">
+  <div class="containerCards">
+    <div *ngFor="let game of arrayGames | slice:ini:limit" class="cards">
+      <mat-card (click)='goDetails(game.id)' class="card">
+        <mat-card-content>
+          <img mat-card-image src={{game.thumbnail}}>
+          <div class="content">
+            <mat-card-header>{{game.title}}</mat-card-header>
+            <mat-chip-list>
+              <mat-chip>{{game.genre}}</mat-chip>
+              <mat-chip> <mat-icon *ngIf="game.platform === 'Web Browser'">desktop_windows</mat-icon>
+                <!-- <svg  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 30 30">
+                  <path d="M12 16L3 16 3 23.75 12 24.988zM12 5L3 6.25 3 14 12 14zM14 4.75L14 14 27 14 27 3zM14 16L14 25.25 27 27 27 16z"></path>
+                  </svg> -->
+                  <img *ngIf="game.platform === 'PC (Windows)'" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAoElEQVR4nO3WoQ3CQACG0UuYAIdkBySODRBYHBMg0KhuQILHsAEJA2AwtQyAIUFhUA9VRwpXSprCPd/7mj8nLoSkrdDFABMssMYe57oCY8yxwg4n3JUIdfx1WSA6jBy3dz6uO/xSCscIaepCzFy/MfX/0dTUUviJNHXrL1feyEOggB6GmGKJDQ64fDXc2GOvKnTQxwgzZNjiiGvlg5PwgQeinanoXBGs1gAAAABJRU5ErkJggg==">
+              </mat-chip>
+            </mat-chip-list>
+          </div>
+          <mat-card-footer>{{game.short_description}}</mat-card-footer>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div class="paginator">
+    <mat-paginator [length]="arrayGames.length" [pageSize]="20" aria-label="Select page" (page)="handlePage($event)">
+  </mat-paginator>
+  </div>
+
+</div>

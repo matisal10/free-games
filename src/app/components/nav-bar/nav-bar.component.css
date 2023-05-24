@@ -1,0 +1,40 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
+  color: white;
+}
+
+li {
+  padding-right: 10px;
+  list-style: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover{
+  color: aqua;
+}
+
+.mat-menu-panel{
+  background-color: #36383f !important;
+}
+
+button {
+  padding-right: 10px;
+}
