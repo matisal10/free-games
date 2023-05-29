@@ -3,7 +3,7 @@
     <div *ngFor="let game of arrayGames | slice:ini:limit" class="cards">
       <mat-card (click)='goDetails(game.id)' class="card">
         <mat-card-content>
-          <img mat-card-image src={{game.thumbnail}}>
+          <img mat-card-image style="height: 224px;" src={{game.thumbnail}}>
           <div class="content">
             <mat-card-header>{{game.title}}</mat-card-header>
             <mat-chip-list>
@@ -21,9 +21,10 @@
       </mat-card>
     </div>
   </div>
-  <div class="paginatorContainer">
+  <!-- <div class="paginatorContainer">
     <mat-paginator class="paginator" [length]="arrayGames.length" [pageSize]="20" aria-label="Select page" (page)="handlePage($event)">
   </mat-paginator>
-  </div>
+  </div> -->
 
 </div>
+

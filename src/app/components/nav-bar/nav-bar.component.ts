@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  category: string[] = [
+    'Shooter',
+    'MMORPG',
+    'MOBA',
+    'Anime',
+    'Battle Royale',
+    'Strategy',
+    'Fantasy',
+    'Sci-Fi',
+    'Card Games',
+    'Racing',
+    'Fighting',
+    'Social',
+    'Sports'
+  ]
+
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
+  }
+
+  changeCategory(category: string){
+    this.route.navigate([`/category/${category}`])
   }
 
 }

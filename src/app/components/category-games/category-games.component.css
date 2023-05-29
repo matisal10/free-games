@@ -26,7 +26,7 @@
 mat-card{
   background-color: black;
   width: 365px;
-  height: 336px;
+  /* height: 336px; */
 }
 
 mat-card-header{

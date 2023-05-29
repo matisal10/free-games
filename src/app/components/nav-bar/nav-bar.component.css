@@ -31,9 +31,10 @@ a:hover{
   color: aqua;
 }
 
-.mat-menu-panel{
+::ng-deep .matMenu {
   background-color: #36383f !important;
 }
+
 
 button {
   padding-right: 10px;

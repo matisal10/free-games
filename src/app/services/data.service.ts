@@ -33,5 +33,15 @@ export class DataService {
     });
   }
 
+  getGamesPerCategory(category:string, platform: string): Observable<games[]> {
+    return this._http.get<games[]>(this.url + `/games` , {
+      headers: this.headers,
+      params: {
+        platform: platform,
+        category: category
+      }
+    });
+  }
+
 
 }

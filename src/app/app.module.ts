@@ -16,13 +16,15 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';
+import { CategoryGamesComponent } from './components/category-games/category-games.component';
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     FooterComponent,
     NavBarComponent,
-    DetailsComponent
+    DetailsComponent,
+    CategoryGamesComponent
   ],
   imports: [
     BrowserModule,
