@@ -21,10 +21,9 @@
       </mat-card>
     </div>
   </div>
-  <!-- <div class="paginatorContainer">
-    <mat-paginator class="paginator" [length]="arrayGames.length" [pageSize]="20" aria-label="Select page" (page)="handlePage($event)">
-  </mat-paginator>
-  </div> -->
+  <div class="loader" *ngIf="flagLoader">
+    <div class="lds-ripple"><div></div><div></div></div>
+  </div>
 
 </div>
 

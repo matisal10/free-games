@@ -28,10 +28,9 @@ export class DashboardComponent implements OnInit {
       .subscribe({
         next: (data: games[]) => {
           this.arrayGames = data;
-          console.log(this.arrayGames)
         },
         error: (err) => {
-          console.log(err)
+          throw new Error(err)
         },
       });
   }
@@ -55,10 +54,6 @@ export class DashboardComponent implements OnInit {
   }
 
   platform(platform: string){
-    // switch (platform) {
-    //   case "PC (Windows)":
-    //     return '<mat-icon>desktop_windows</mat-icon>'
-    // }
     if(platform === "PC (Windows)" || platform === "Web Browser"){
       return 'desktop_windows'
     }

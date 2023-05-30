@@ -21,17 +21,15 @@ export class DetailsComponent implements OnInit {
 
   getGame() {
     const id = this.rutaActiva.snapshot.paramMap.get('id')
-    console.log(id)
     if (id) {
       this._service
         .getOneGame(id)
         .subscribe({
           next: (data: game) => {
             this.game = data;
-            console.log(this.game)
           },
           error: (err) => {
-            console.log(err)
+            throw new Error(err)
           },
         });
     }

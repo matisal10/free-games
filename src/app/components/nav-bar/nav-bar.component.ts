@@ -25,13 +25,34 @@ export class NavBarComponent implements OnInit {
     'Sports'
   ]
 
+  categoryBrowser: string[] = [
+    'Shooter',
+    'MMORPG',
+    'Anime',
+    'Strategy',
+    'Fantasy',
+    'Sci-Fi',
+    'Card Games',
+    'Racing',
+    'Social',
+    'Sports'
+  ]
+
   constructor(private route: Router) { }
 
   ngOnInit(): void {
   }
 
-  changeCategory(category: string){
-    this.route.navigate([`/category/${category}`])
+  changeCategory(category: string, platform: string) {
+    switch (category) {
+      case 'Card Games':
+        category = 'card'
+        break;
+      case 'Battle Royale':
+        category = 'battle-royale'
+        break;
+    }
+    this.route.navigate([`/category/${category}/${platform}`])
   }
 
 }

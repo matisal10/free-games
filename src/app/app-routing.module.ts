@@ -13,7 +13,7 @@ const routes: Routes = [
     component: DetailsComponent
   },
   {
-    path: 'category/:category',
+    path: 'category/:category/:platform',
     component: CategoryGamesComponent
   },
   {
